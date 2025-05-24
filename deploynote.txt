@@ -1,0 +1,20 @@
+# Set your Google Cloud Project ID
+export GOOGLE_CLOUD_PROJECT="metal-ring-456416-s1"
+
+# Set your desired Google Cloud Location
+export GOOGLE_CLOUD_LOCATION="us-central1"
+
+# Set the path to your agent code directory
+export AGENT_PATH="./travelife_agent" # Assuming it's in the current directory
+
+# Set a name for your Cloud Run service (optional)
+export SERVICE_NAME="travelife_agent_api"
+
+# Set an application name for the ADK API server (optional)
+# Defaults to the agent directory name if not set
+export APP_NAME="capital-agent-app"
+
+# Ensure Vertex AI backend is used if needed by your model config
+export GOOGLE_GENAI_USE_VERTEXAI=True # Or False, depending on your LLM setup
+
+gcloud run deploy travelife-agent --source . --project=metal-ring-456416-s1 --region=us-central1
