@@ -1,5 +1,5 @@
 
-FROM python:3.11-slim
+FROM python:3.13-slim
 WORKDIR /app
 
 # Create a non-root user
@@ -33,4 +33,4 @@ COPY . /app/
 
 EXPOSE 8000
 
-CMD ["python", "agent.py"]
+CMD ["python", "travelife_agent/agent.py"]
