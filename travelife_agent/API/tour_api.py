@@ -3,7 +3,6 @@ from travelife_agent.API.auth_session import BASE_URL, SessionManager
 
 TOUR_URL = f"{BASE_URL}/api/v1/tours"
 
-
 def get_all_tours(filter_query=""):
   try:
     url = f"{TOUR_URL}/all{filter_query}"
@@ -30,8 +29,6 @@ def get_active_tours(filter_query=""):
 
 def search_tour(input_value: str):
   try:
-    print("data type to call api 1 % s" % type(input_value))
-    print("data to call api 1 % s" % input_value)
     url = f"{BASE_URL}/api/v1/search/{input_value}?limit=5"
     response = requests.get(url)
     response.raise_for_status()
@@ -42,6 +39,8 @@ def search_tour(input_value: str):
 
 def get_tour_detail(tour_id: str):
   try:
+    print("data type to call api 1 % s" % type(tour_id))
+    print("data to call api 1 % s" % tour_id)
     url = f"{TOUR_URL}/{tour_id}"
     headers = SessionManager.get_headers()
     response = requests.get(url, headers=headers)
